@@ -53,3 +53,4 @@ Please make sure to follow the [code of conduct](CODE_OF_CONDUCT.md) and [contri
 ## Contact
 For any inquiries or suggestions, feel free to reach out:
 - [LinkedIn](https://www.linkedin.com/in/shubham-sonake-410241231)
+- [Twitter](https://x.com/Shubham3102003?s=08)
