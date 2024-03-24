@@ -29,6 +29,7 @@ Feel free to contribute implementations in other languages as well!
   - Trees
   - Graphs
   - Hash Tables
+    
 - **Algorithms**
   - Searching
   - Sorting
