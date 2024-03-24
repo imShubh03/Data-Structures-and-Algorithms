@@ -2,8 +2,8 @@
 // any elem leftmost occurence index and right most occurence index show output
 // think of binary seach
 // dividing priblem into two parts first find the leftmost pccurence and then othe part right most occurence
-#include <iostream>
-#include <cmath>
+#include<bits/stdc++.h>
+
 using namespace std;
 int firstmost(int arr[], int n, int key)
 {

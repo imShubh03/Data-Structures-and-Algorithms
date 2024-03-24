@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include<bits/stdc++.h>
 
 using namespace std;
 
@@ -9,17 +8,25 @@ public:
     TreeNode *left;
     TreeNode *right;
 
-    TreeNode(int val) : data(val), left(nullptr), right(nullptr) {}
+    TreeNode(int d){
+        this -> data = d;
+        this -> left = NULL;
+        this -> right = NULL;
+        
+    }
 };
 
 class BinaryTree {
 public:
     TreeNode *root;
+    
+    BinaryTree(){
+        this -> root = NULL;
+    }
 
-    BinaryTree() : root(nullptr) {}
-
-    BinaryTree(TreeNode *node) : root(node) {}
-
+    BinaryTree(TreeNode *node){
+        this -> root = node;
+    }
     void inOrder(TreeNode *root, vector<int> &temp) {
         if (root == nullptr) {
             return;
@@ -101,13 +108,13 @@ int main() {
     cout << endl;
 
     // Freeing memory
-    delete root->right->right;
-    delete root->right->left;
-    delete root->left->right;
-    delete root->left->left;
-    delete root->right;
-    delete root->left;
-    delete root;
+    // delete root->right->right;
+    // delete root->right->left;
+    // delete root->left->right;
+    // delete root->left->left;
+    // delete root->right;
+    // delete root->left;
+    // delete root;
 
     return 0;
 }

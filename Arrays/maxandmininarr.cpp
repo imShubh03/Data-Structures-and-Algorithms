@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cmath>
+#include<bits/stdc++.h>
+
 using namespace std;
 int getMax(int num[], int n)
 {

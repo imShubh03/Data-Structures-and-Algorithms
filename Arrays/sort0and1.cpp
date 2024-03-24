@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cmath>
+#include<bits/stdc++.h>
+
 using namespace std;
 // given are array of 0s and 1s we have to sort such that all
 //  0s on one side and all 1s on other

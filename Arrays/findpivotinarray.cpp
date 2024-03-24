@@ -1,4 +1,5 @@
-#include<iostream> 
+#include<bits/stdc++.h>
+
 using namespace std;
 
 int getPivot(int arr[], int n) {

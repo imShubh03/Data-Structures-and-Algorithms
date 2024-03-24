@@ -2,8 +2,8 @@
 // first find mid  elem and then compare with given key
 // if equL RETURN THAT index if not then see key in which part of 2 halves
 // again repeat process of mid elem and then compare as we have 2 parts of arrays afteer dividing in first time
-#include <iostream>
-#include <cmath>
+#include<bits/stdc++.h>
+
 using namespace std;
 int binarysearch(int arr[], int size, int key)
 {

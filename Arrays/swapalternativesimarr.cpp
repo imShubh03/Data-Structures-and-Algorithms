@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cmath>
+#include<bits/stdc++.h>
+
 using namespace std;
 void alternateswap(int arr[], int size)
 {
