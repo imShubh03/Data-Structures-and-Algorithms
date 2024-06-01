@@ -1,8 +1,18 @@
 #include <iostream>
 #include <vector>
+#include<algorithm>
+
 
 using namespace std;
 
+int largestElement(vector<int> &arr, int n) {
+    sort(arr.begin(), arr.end());
+
+    int ans = arr[n-1];
+    return ans;
+}
+
+/*
 int largestElement(vector<int> &arr, int n) {
     int largest = arr[0];
     for(int i = 1; i < n; i++) {
@@ -12,6 +22,7 @@ int largestElement(vector<int> &arr, int n) {
     }
     return largest;
 }
+*/
 
 int main() {
     int n;
