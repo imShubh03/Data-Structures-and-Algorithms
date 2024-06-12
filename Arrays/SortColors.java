@@ -2,7 +2,7 @@ public class SortColors {
     public static void main(String[] args) {
         SortColors sortColors = new SortColors();
 
-        int[] nums = {2, 0, 2, 1, 1, 0};
+        int[] nums = { 2, 0, 2, 1, 1, 0 };
         System.out.println("Before sorting:");
         for (int num : nums) {
             System.out.print(num + " ");
