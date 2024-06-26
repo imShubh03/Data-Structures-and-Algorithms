@@ -9,10 +9,11 @@ class Solution {
         int n = arr.size();
         int low = 0;
         int high = n-1;
+        int count = 0;
         while (low <= high)
         {
             int mid = (low + high)/2;
-
+            count++;
             if(arr[mid] == mid){
                 return mid;
             }
@@ -23,8 +24,9 @@ class Solution {
                 high = mid -1;
             }
         }
+        cout<< count <<endl;
         return -1;
-        
+        // -150 -100 -90 -80 -70 -50 -20 -10 -5 -3 0 3 7 9 10 13 17 20 25 30 35 50 55 60 70 90 200 210 220 
     }
 };
 int main() {

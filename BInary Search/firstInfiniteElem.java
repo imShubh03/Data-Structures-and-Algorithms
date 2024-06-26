@@ -6,7 +6,8 @@ class firstInfiniteElem {
         int low = 0;
         int high = 1;
         int maxVal = Integer.MAX_VALUE;
-
+        // @SuppressWarnings("unused")
+        int count = 0; // Initialize count to track iterations
         // Double the high index until finding an infinite or very large element
         while (high < arr.length && arr[high] < maxVal) {
             low = high;
@@ -16,14 +17,14 @@ class firstInfiniteElem {
         // Perform binary search to find the first infinite element
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            
+            count++;
             if (arr[mid] < maxVal) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
             }
         }
-
+        System.out.println(count);
         return low; // Return the index of the first infinite element
     }
 
@@ -38,6 +39,7 @@ class firstInfiniteElem {
 
         if (result < arr.length) {
             System.out.println("Index of first infinite element: " + result);
+            
         } else {
             System.out.println("No infinite element found.");
         }
