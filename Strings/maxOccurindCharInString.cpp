@@ -2,6 +2,8 @@
 #include <unordered_map>
 using namespace std;
 
+
+//  time : O(N)  space:O(N)
 class Solution {
 public:
     char getMaxOccurringChar(string str) {
