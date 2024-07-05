@@ -1,28 +1,28 @@
 #include <iostream>
 #include <unordered_map>
+#include <cctype>    // for std::tolower
 using namespace std;
 
-
-//  time : O(N)  space:O(N)
 class Solution {
 public:
     char getMaxOccurringChar(string str) {
-        if (str.empty()) {
-            return '\0';
+        unordered_map<char, int> freq;
+
+        // Convert all characters to lowercase
+        for (char& ch : str) {
+            ch = tolower(ch);
         }
 
-        unordered_map<char, int> map;
-
-        // Increment the frequency of each character
+        // Count frequencies of each character
         for (char ch : str) {
-            map[ch]++;
+            freq[ch]++;
         }
 
         char maxChar = '\0';
         int maxCount = 0;
 
-        // Find the character with the maximum frequency
-        for (auto it : map) {
+        // Find character with maximum frequency, handling ties lexicographically
+        for (auto& it : freq) {
             if (it.second > maxCount || (it.second == maxCount && it.first < maxChar)) {
                 maxChar = it.first;
                 maxCount = it.second;
