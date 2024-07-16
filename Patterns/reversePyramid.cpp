@@ -19,7 +19,9 @@ void nStarTriangle(int n) {
         for(int j = 1; j <= 2 * (n - i + 1) - 1; j++) {
             cout << "*";
         }
-        // No need for trailing spaces; they are not part of the pattern
+        for(int j = 1; j < i; j++) {
+            cout << " ";
+        }
         cout << endl;
     }
 }
