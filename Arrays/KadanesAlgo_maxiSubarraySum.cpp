@@ -68,7 +68,7 @@ int main() {
     vector<int>nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4};
 
     int ans = sol.maxSubArray(nums);
-    cout<<"the max subarray is of size "<<ans<<endl;
+    cout<<"the max subarray is of "<<ans<<" size"<<endl;
 
 
     return 0;
