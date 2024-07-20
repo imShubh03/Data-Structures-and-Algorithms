@@ -16,6 +16,11 @@ class solution{
 };
 */
 
+/*
+OPTIMISED: Eucledian Algo => acc to algo gcd(a,b)= gcd(a-b,b) where a>b  OR we can say gcd(a,b) = gcd(a%b,b), also if any of a or b ==0 then the other will be ans
+
+TC: O(Log alpha to min(a,b))  aplha= min of a or b
+*/
 class solution{
     public:
     int gcd(int a, int b){
