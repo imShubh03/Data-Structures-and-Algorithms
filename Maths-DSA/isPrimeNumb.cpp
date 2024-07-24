@@ -10,6 +10,8 @@ int main() {
     for (int i = 1; i * i <= n; i++) {
         if (n % i == 0) {
             cnt++;
+
+            //for 6 6 pair we want first pair only not the second one so
             if (i != n / i) {
                 cnt++;
             }
