@@ -41,17 +41,12 @@ class Solution{
 int main() {
     int n;
     cin>>n;
-
     vector<int>nums(n);
-
     for(int i =0;i<n;i++){
         cin>>nums[i];
     }
-
     Solution sol;
     int ans = sol.singleNumber(nums);
-    
     cout<<"answer is "<<ans<<endl;
-
     return 0;
 }
