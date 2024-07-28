@@ -47,22 +47,67 @@ public:
 };
 */
 
+class Solution {
+public:
+    void zeroMatrix(vector<vector<int>>& matrix) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+        int col0 = 1;
 
+        // Mark the rows and columns that need to be zeroed
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == 0) {
+                    // Mark the ith row
+                    matrix[i][0] = 0;
+                    // Mark the jth column, but consider the exception
+                    if (j != 0) {
+                        matrix[0][j] = 0;
+                    } else {
+                        col0 = 0;
+                    }
+                }
+            }
+        }
+
+        // Traverse the matrix from row 1 and column 1
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (matrix[i][j] != 0) {
+                    if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                        matrix[i][j] = 0;
+                    }
+                }
+            }
+        }
+
+        // Check for the first row
+        if (matrix[0][0] == 0) {
+            for (int j = 0; j < n; j++) {
+                matrix[0][j] = 0;
+            }
+        }
+
+        // Check for the first column
+        if (col0 == 0) {
+            for (int i = 0; i < m; i++) {
+                matrix[i][0] = 0;
+            }
+        }
+    }
+};
 
 int main() {
-    
-    vector<vector<int>>matrix ={{1,1,1,1},{1,0,0,1},{1,1,0,1},{1,1,1,1}};
-    int m = matrix.size();
-    int n = matrix[0].size();
+    vector<vector<int>> matrix = {{1, 1, 1, 1}, {1, 0, 0, 1}, {1, 1, 0, 1}, {1, 1, 1, 1}};
     Solution sol;
-    vector<vector<int>> ans = sol.zeroMatrix(matrix,n,m);
+    sol.zeroMatrix(matrix);
 
-    cout<<"the final ans "<<endl;
-    for(auto it : ans){
-        for(auto ele : it){
-            cout<<ele<<" ";
+    cout << "The final matrix is:" << endl;
+    for (const auto& row : matrix) {
+        for (int elem : row) {
+            cout << elem << " ";
         }
-        cout<<endl;
+        cout << endl;
     }
     return 0;
 }
