@@ -24,7 +24,7 @@ public:
 };
 int main() {
     Solution sol;
-    vector<int> nums = {1, 3, 5, 6};
+    vector<int> nums = {1, 2, 4, 7};
     int target = 5;
     // Call searchInsert to find the insertion index for target
     int insertIndex = sol.searchInsert(nums, target);
