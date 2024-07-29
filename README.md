@@ -15,12 +15,15 @@ To get started, clone this repository to your local machine:
 
 ```bash
 git clone https://github.com/imShubh03/data-structures-algorithms.git
+```
 
 ## Navigate to the desired directory and
 
 compile the C++ code using:
+```bash
 g++ filename.cpp
 ./a.exe (for windows) ans ./a.out (for linux)
+```
 
 
 
