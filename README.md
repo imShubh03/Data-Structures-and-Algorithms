@@ -17,7 +17,7 @@ To get started, clone this repository to your local machine:
 git clone https://github.com/imShubh03/data-structures-algorithms.git
 ```
 
-## Navigate to the desired directory and
+## 🧭Navigate to the desired directory and
 
 compile the C++ code using:
 ```bash
@@ -25,6 +25,26 @@ g++ filename.cpp
 ./a.exe (for windows) ans ./a.out (for linux)
 ```
 
+compile the Java code using:
+```bash
+javac filename.java
+java classname
+```
+
+## 📄 Usage
+Each algorithm or data structure is provided in its own file with a main function to demonstrate its functionality. You can run the examples to see the implementation in action.
+
+## 🧑‍💻 Contributing
+Contributions are welcome! If you have improvements, new algorithms, or bug fixes, please feel free to submit a pull request. You can also open issues to report bugs or suggest features.
+
+## 📧 Contact
+For any questions or suggestions, you can reach out to me at :
+```bash
+shubhamsonake307@gmail.com.
+```
+
+## 🎉 Acknowledgments
+Thank you for checking out this repository. Happy coding! 🎉✨
 
 
 
