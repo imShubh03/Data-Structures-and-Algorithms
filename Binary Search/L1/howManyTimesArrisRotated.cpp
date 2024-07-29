@@ -35,6 +35,7 @@ public:
     }
 };
 
+
 int main() {
     Solution solution;
     vector<int> arr = {6, 7, 9, 15, 19, 2, 3};
