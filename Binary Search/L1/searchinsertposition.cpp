@@ -2,6 +2,8 @@
 #include <vector>
 
 using namespace std;
+//similar to lower bound
+
 
 class Solution {
 public:
