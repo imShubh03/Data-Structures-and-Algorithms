@@ -41,7 +41,7 @@ class Solution{
     //length of LL
     int lengthOFLL(Node* head){
         int count=0;
-        Node* temp = hesad;
+        Node* temp = head;
         while(temp!=nullptr){
             count++;
             temp = temp -> next;
@@ -59,6 +59,7 @@ class Solution{
         return false;
     }
 };
+
 int main() {
     vector<int>arr ={12,2,4,5,8};
     Solution sol;
