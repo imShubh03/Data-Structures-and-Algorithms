@@ -17,7 +17,7 @@ public:
 
             if (arr[mid] < ans) {
                 ans = arr[mid];
-                index = mid;
+                index = mid; 
             }
 
             // Eliminate left half if it is sorted
