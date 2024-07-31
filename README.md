@@ -22,7 +22,7 @@ git clone https://github.com/imShubh03/data-structures-algorithms.git
 compile the C++ code using:
 ```bash
 g++ filename.cpp
-./a.exe (for windows) ans ./a.out (for linux)
+./a.exe (for windows) or ./a.out (for linux)
 ```
 
 compile the Java code using:
