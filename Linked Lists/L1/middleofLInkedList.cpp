@@ -1,54 +1,91 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
-// Define the structure for ListNode
-struct ListNode {
-  int val;
-  ListNode* next; 
 
-  ListNode(int x){
-    this -> val = x;
-    this -> next = NULL;
-  }
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int val) : data(val), next(nullptr) {}
 };
 
-
-// Define the Solution class
 class Solution {
-  public: ListNode * middleNode(ListNode * head) {
-    ListNode * slow = head;
-    ListNode * fast = head;
-    while (fast != NULL && fast -> next != NULL) {
-      slow = slow -> next;
-      fast = fast -> next -> next;
+public:
+
+    /*  brute : time:O(2n) space:O(1)
+    int getLen(Node* head) {
+        int len = 0;
+        while (head != nullptr) {
+            len++;
+            head = head->next;
+        }
+        return len;
     }
-    return slow;
-  }
+
+    Node* findMiddle(Node* head) {
+        int len = getLen(head);
+        int ans = len / 2;
+        Node* temp = head;
+        int cnt = 0;
+        while (cnt < ans) {
+            temp = temp->next;
+            cnt++;
+        }
+        return temp;
+    }
+    */
+
+    //optimised
+    Node* findMiddle(Node* head){
+        Node* slow = head;
+        Node* fast = head;
+        while (fast!=nullptr && fast ->next != nullptr){
+            slow = slow ->next;
+            fast = fast -> next -> next;
+        }
+        return slow;
+    }
+
+    void printSLL(Node* head) {
+        Node* temp = head;
+        while (temp != nullptr) {
+            cout << temp->data << " ";
+            temp = temp->next;
+        }
+        cout << endl;
+    }
+
+    Node* insertAtEnd(Node* head, int val) {
+        Node* newNode = new Node(val);
+        if (head == nullptr) {
+            return newNode;
+        }
+        Node* temp = head;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+        return head;
+    }
 };
 
-// Main function to test the Solution class
 int main() {
-  // Create a linked list
-  ListNode * head = new ListNode(1);
-  head -> next = new ListNode(2);
-  head -> next -> next = new ListNode(3);
-  head -> next -> next -> next = new ListNode(4);
-  head -> next -> next -> next -> next = new ListNode(5);
+    Solution sol;
 
-  // Create an object of the Solution class
-  Solution solution;
+    // Create a singly linked list
+    Node* head = nullptr;
+    head = sol.insertAtEnd(head, 1);
+    head = sol.insertAtEnd(head, 2);
+    head = sol.insertAtEnd(head, 3);
+    head = sol.insertAtEnd(head, 4);
+    head = sol.insertAtEnd(head, 5);
 
-  // Find the middle node of the linked list
-  ListNode * middle = solution.middleNode(head);
+    cout << "Original SLL: ";
+    sol.printSLL(head);
 
-  // Print the value of the middle node
-  std::cout << "The middle node value is: " << middle -> val << std::endl;
-
-  // Free memory by deleting the linked list
-  while (head != NULL) {
-    ListNode * temp = head;
-    head = head -> next;
-    delete temp;
-  }
-
-  return 0;
+    // Find the middle of the singly linked list
+    Node* middle = sol.findMiddle(head);
+    
+    cout << "Middle element is " << middle->data << endl;
+    return 0;
 }
