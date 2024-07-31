@@ -164,18 +164,18 @@ int main() {
     sol.printDLL(head);
 
     // Insert at kth position
-    // int k;
-    // cout << "Enter the position to insert: " << endl;
-    // cin >> k;
-    // cout << "Inserting at " << k << " position..." << endl;
-    // head = sol.insertBeforeKth(head, k, 250);
-    // sol.printDLL(head);
+    int k;
+    cout << "Enter the position to insert: " << endl;
+    cin >> k;
+    cout << "Inserting at " << k << " position..." << endl;
+    head = sol.insertBeforeKth(head, k, 250);
+    sol.printDLL(head);
 
     // Insert an element/newVal before the given value in LL
     int newVal, ele;
-    cout << "Enter the new value to insert: " << endl;
+    cout << "Enter the new value to insert..." << endl;
     cin >> newVal;
-    cout << "Enter the element in LL before which it has to be inserted: " << endl;
+    cout << "Enter the element in LL before which it has to be inserted..." << endl;
     cin >> ele;
     cout << "Inserting " << newVal << " before " << ele << endl;
     head = sol.insertBeforeVal(head, newVal, ele);

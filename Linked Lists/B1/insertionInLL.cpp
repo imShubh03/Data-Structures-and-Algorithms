@@ -154,9 +154,9 @@ int main() {
 
     // Insert an element/newVal before the given value in LL
     int newVal, ele;
-    cout << "Enter the new value to insert: " << endl;
+    cout << "Enter the new value to insert..." << endl;
     cin >> newVal;
-    cout << "Enter the element in LL before which it has to be inserted: " << endl;
+    cout << "Enter the element in LL before which it has to be inserted..." << endl;
     cin >> ele;
     cout << "Inserting " << newVal << " before " << ele << endl;
     head = sol.insertBeforeValue(head, newVal, ele);
