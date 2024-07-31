@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.ejs": "html",
         "array": "cpp",
         "atomic": "cpp",
         "*.tcc": "cpp",
@@ -40,7 +41,8 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "list": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

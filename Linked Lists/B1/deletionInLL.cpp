@@ -116,7 +116,6 @@ class Solution{
 
             prev = temp;
             temp = temp -> next;
-            
         }
         return head;
     }
