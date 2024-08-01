@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+/*
 // USING LEFT SHIFT 
 bool isKthBitSet(int n, int k)
 {
@@ -11,6 +12,7 @@ bool isKthBitSet(int n, int k)
         return false;
     }
 }
+*/
 
 //USING RIGHT SHIFT
 bool isKthBitSet(int n, int k)
