@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 // Definition for a binary tree node
@@ -50,17 +50,17 @@ int main() {
     root->right->right = new TreeNode(7);
 
     // Perform in-order traversal
-    cout << "In-order Traversal: ";
+    cout << "In-order Traversal is...";
     inOrderTraversal(root);
     cout << endl;
 
     // Perform pre-order traversal
-    cout << "Pre-order Traversal: ";
+    cout << "Pre-order Traversal is...";
     preOrderTraversal(root);
     cout << endl;
 
     // Perform post-order traversal
-    cout << "Post-order Traversal: ";
+    cout << "Post-order Traversal is...";
     postOrderTraversal(root);
     cout << endl;
 
