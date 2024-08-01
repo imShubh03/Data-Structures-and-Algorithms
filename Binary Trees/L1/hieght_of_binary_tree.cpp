@@ -22,10 +22,10 @@ public:
         if(root == NULL){
             return 0 ;
         }
-        int left = maxDepth(root -> left);
-        int right = maxDepth(root -> right);
+        int leftSide = maxDepth(root -> left);
+        int rightSide = maxDepth(root -> right);
 
-        int ans= max(left,right) + 1;
+        int ans= max(leftSide,rightSide) + 1;
 
         return ans;
         
@@ -43,13 +43,7 @@ int main() {
     Solution sol;
     int depth = sol.maxDepth(root);
     cout << "Maximum depth of the tree: " << depth << endl;
-
-    // Remember to free memory allocated for the tree nodes
-    delete root->left;
-    delete root->right->left;
-    delete root->right->right;
-    delete root->right;
-    delete root;
+    
 
     return 0;
 }

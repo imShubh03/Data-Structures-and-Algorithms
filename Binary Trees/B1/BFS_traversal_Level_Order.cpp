@@ -35,7 +35,7 @@ public:
                 // Print the current node's data
                 cout << node->data << " ";
             }
-            cout << endl;  // Print a new line after each level
+            cout << endl; 
         }
     }
 };
