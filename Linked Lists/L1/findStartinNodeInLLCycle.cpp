@@ -12,6 +12,7 @@ public:
 
 class Solution {
 public:
+    /*  brute: time:O(n 2 logn) depend on map   space:O(n)
     Node* detectCycle(Node* head) {
         // Unordered map to track visited nodes
         unordered_map<Node*, int> mp;
@@ -29,6 +30,27 @@ public:
         }
 
         // No cycle found
+        return nullptr;
+    }
+    */
+
+    // Floyd's cycle-finding algorithm: time:O(n) space:O(1)
+    Node* detectCycle(Node* head) {
+        Node* slow = head;
+        Node* fast = head;
+        while(fast!=nullptr && fast -> next != nullptr){
+            slow = slow -> next;
+            fast = fast -> next -> next;
+
+            if(slow == fast){
+                slow = head;
+                while(slow != fast){
+                    slow = slow -> next;
+                    fast = fast -> next;
+                }
+                return slow;
+            }
+        }
         return nullptr;
     }
 
@@ -63,10 +85,12 @@ int main() {
     head = sol.insertAtEnd(head, 3);
     head = sol.insertAtEnd(head, 2);
     head = sol.insertAtEnd(head, 0);
+    head = sol.insertAtEnd(head, 10);
+    head = sol.insertAtEnd(head, 17);
     head = sol.insertAtEnd(head, 44);
 
     // Creating a cycle: connecting last node to the second node
-    head->next->next->next->next = head->next;
+    head->next->next->next = head->next->next;
 
     // Detect the cycle
     Node* cycleStart = sol.detectCycle(head);
