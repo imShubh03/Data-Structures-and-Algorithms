@@ -3,7 +3,7 @@ using namespace std;
 class Solution{
     public:
     void printSubSets(int index, vector<int>&ans, int arr[], int n){
-        //base case
+        //base case 
         if(index ==n){
             for(auto it:ans){
                 cout<<it<<" ";
