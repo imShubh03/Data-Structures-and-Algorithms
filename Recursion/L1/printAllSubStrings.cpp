@@ -2,40 +2,43 @@
 using namespace std;
 
 // TC : O(n 2^n) (loop*no of recurcall)  SC:O(n)
+
 class Solution{
     public:
-    void printSubSets(int index, vector<int>&ans, int arr[], int n){
-        //base case 
-        if(index ==n){
+    void printSubStr(int index, string &str, string &ans, int n){
+        //base case
+        if(index==n){
             for(auto it:ans){
                 cout<<it<<" ";
             }
             if(ans.empty()){
-                cout<<"[]";
+                cout<<"{}";
             }
             cout<<endl;
             return;
         }
 
         //pick the index
-        ans.push_back(arr[index]);
-        printSubSets(index+1,ans,arr,n);
+        ans.push_back(str[index]);
+        printSubStr(index+1,str, ans, n);
         ans.pop_back();
 
-        //not pick the elem
-        printSubSets(index+1,ans,arr,n);
+        //donot pick the index
+        printSubStr(index+1,str,ans,n);
+
     }
 
 };
 
 int main() {
-    int arr[] ={3,1,2};
-    int n = 3;
+    string str = "abdv";
 
-    vector<int>ans;
+    int index =0;
+    string ans="";
+    int n =4;
 
     Solution sol;
-    sol.printSubSets(0,ans,arr,n);
+    sol.printSubStr(index,str,ans,n);
 
     return 0;
 }
