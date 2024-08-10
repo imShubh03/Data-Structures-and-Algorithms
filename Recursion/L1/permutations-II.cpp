@@ -11,6 +11,9 @@ public:
         }
 
         for (int i = 0; i < nums.size(); i++) {
+            // Skip duplicates: if the current element is the same as the previous one and the previous one was not used
+            if(i > 0 && nums[i] == nums[i-1] && !freq[i-1]) continue;
+
             // If the current element is not yet included in the current permutation
             if (!freq[i]) {
                 ds.push_back(nums[i]);
@@ -22,10 +25,12 @@ public:
         }
     }
 
-    vector<vector<int>> permute(vector<int>& nums) {
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
         vector<vector<int>> ans;
         vector<int> ds;
         vector<int> freq(nums.size(), 0); // Initialize freq as a vector
+
+        sort(nums.begin(), nums.end()); // Sort the array to handle duplicates
 
         findPerm(nums, ds, freq, ans);
         return ans; // Return the result
@@ -34,12 +39,12 @@ public:
 
 int main() {
     Solution sol;
-    vector<int> nums = {1, 2, 3};
-    
-    vector<vector<int>> result = sol.permute(nums);
+    vector<int> nums = {1, 1, 2};
+
+    vector<vector<int>> result = sol.permuteUnique(nums);
 
     // Print the result
-    cout << "All permutations are:\n";
+    cout << "All unique permutations are:\n";
     for ( auto permutation : result) {
         cout << "[ ";
         for (int num : permutation) {
