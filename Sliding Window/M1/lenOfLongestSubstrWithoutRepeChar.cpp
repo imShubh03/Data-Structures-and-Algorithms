@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/* brute : time:O(n^2) space:O(1)
 class Solution{
     public:
     int lengthOfLongestSubstring(string s){
@@ -15,6 +16,33 @@ class Solution{
                 maxlen = max(maxlen, len);
                 hash[s[j]]=1;
             }
+        }
+        return maxlen;
+    }
+};
+*/
+
+
+// optimised : time:O(n) , space:O(256)
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int n = s.length();
+        int l = 0, r = 0;
+        int maxlen = 0;
+        int hash[256]; 
+        fill(hash, hash + 256, -1); // Properly initialize all elements to -1
+
+        while (r < n) {
+            if (hash[s[r]] != -1 && hash[s[r]] >= l) {
+                l = hash[s[r]] + 1; // Move the left pointer
+            }
+
+            int len = r - l + 1;
+            maxlen = max(maxlen, len);
+            hash[s[r]] = r; // Update the hash with the latest index of the character
+
+            r++;
         }
         return maxlen;
     }
