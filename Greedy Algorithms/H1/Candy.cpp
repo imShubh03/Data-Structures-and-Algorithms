@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/* brute : time:O(3n) space:O(2n)
 class Solution {
 public:
     int candy(vector<int>& ratings) {
@@ -42,10 +43,81 @@ public:
         return sum;
     }
 };
+*/
 
+/* time: O(2n) space:O(n)
+class Solution {
+public:
+    int candy(vector<int>& ratings) {
+        int n = ratings.size();
+        if (n == 0) return 0;
+
+        vector<int> left(n, 1);  // Initialize all elements in left with 1
+        
+        // Left-to-right pass (left array)
+        for (int i = 1; i < n; i++) {
+            if (ratings[i] > ratings[i - 1]) {
+                left[i] = left[i - 1] + 1;
+            }
+        }
+
+        // Right-to-left pass and calculate sum in the same loop
+        int sum = left[n - 1];  // Start with the last element of the left array
+        int right = 1;  // Initialize for the right-to-left pass
+        for (int i = n - 2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1]) {
+                right++;
+            } else {
+                right = 1;
+            }
+            sum += max(left[i], right);  // Take the maximum of left and right
+        }
+
+        return sum;
+    }
+};
+*/
+
+// optimised 
+class Solution {
+public:
+    int candy(vector<int>& ratings) {
+        int n  = ratings.size();
+        int sum =1;
+        int i =1;
+        while(i<n){
+            // flat surface
+            if(ratings[i]==ratings[i-1]){
+                sum++;
+                i++;
+                continue;
+            }
+            // increasing slope
+            int peak = 1;
+            while(i<n && ratings[i]>ratings[i-1]){
+                peak++;
+                sum+=peak;
+                i++;
+            }
+            // decreasing slope
+            int down = 1;
+            while(i<n && ratings[i]< ratings[i-1]){
+                sum += down;
+                i++;
+                down++;
+            }
+
+            // decreasing over
+            if(down > peak){
+                sum += (down - peak);
+            }
+        }
+        return sum;
+    }
+};
 
 int main() {
-    vector<int> ratings = {1, 3, 2, 2, 1}; 
+    vector<int> ratings = {1,0,2}; 
     Solution sol;
     int result = sol.candy(ratings); 
     cout << "Total number of candies required: " << result << endl; 
