@@ -35,7 +35,7 @@ public:
         for (int i = 0; i < n; i++) {
             freqarr[nums[i]]++;
         }
-        for(int i =0;i<=n;i++){
+        for(int i =1;i<=n;i++){
             if(freqarr[i] == 0){
                 return i;
                 break;
@@ -46,7 +46,7 @@ public:
 };
 */
 
-//optimal
+//optimal time:O(n) space:O(1)
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
