@@ -45,6 +45,38 @@ public:
 };
 */
 
+// optimal : moores voting algo time:O(n) space:O(1)
+class Solution{
+    public:
+    int majorityElement(vector<int>& nums){
+        int n = nums.size();
+        int cnt =0;
+        int ele;
+        for(int i =0; i<n; i++){
+            if(cnt ==0){
+                ele = nums[i];
+                cnt =1;
+            }
+            else if(nums[i] == ele){
+                cnt++;
+            }
+            else{
+                cnt--;
+            }
+        }
+        // we have our elem here
+        int ans = 0;
+        for(int i =0; i<n; i++){
+            if(nums[i] == ele){
+                ans++;
+            }
+        }
+        if(ans > (n/2)){
+            return ele;
+        }
+        return -1;
+    }
+};
 
 
 int main() {

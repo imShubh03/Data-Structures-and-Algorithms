@@ -63,6 +63,39 @@ class Solution{
     }
 };
 
+
+// IF HAS TO PRINT SUBARRAY
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int sum = 0;
+        int maxi = INT_MIN;
+        int start = 0, newStart = 0, end = 0;
+        int len = 0; 
+        for (int i = 0; i < nums.size(); i++) {
+            if (sum == 0) {
+                newStart = i; 
+            }
+            sum += nums[i];
+
+            if (sum > maxi) {
+                maxi = sum;
+                start = newStart;
+                end = i;
+            }
+
+            if (sum < 0) {
+                sum = 0;  
+            }
+        }
+
+        len = end - start + 1;
+
+        return len;
+    }
+};
+
+
 int main() {
     Solution sol;
     vector<int>nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4};
