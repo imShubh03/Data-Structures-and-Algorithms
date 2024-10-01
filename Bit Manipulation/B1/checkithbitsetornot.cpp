@@ -1,6 +1,31 @@
 #include <iostream>
 using namespace std;
 
+/*brute force
+bool isKthBitSet(int n, int k) {
+    string binary = "";
+
+    while(n > 0) {
+        int last = n % 2;
+        binary += to_string(last);
+        n = n / 2;
+    }
+
+    int len = binary.size();
+    
+    if(k > len) return false;
+
+    for(int i = len - 1; i >= 0; i--) {
+        if(i == len - k) {
+            if(binary[i] == '1') {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+*/
+
 /*
 // USING LEFT SHIFT 
 bool isKthBitSet(int n, int k)
