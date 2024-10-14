@@ -11,6 +11,7 @@ int climbStairs(int n, vector<int> &dp) {
         return dp[n];
     }
 
+
     // Calculate and store the result in ways array
     dp[n] = climbStairs(n - 1, dp) + climbStairs(n - 2, dp);
 
@@ -50,7 +51,6 @@ int main() {
     cin >> n; // Input the value of n
 
     vector<int> dp(n + 1, -1);
-
 
     int res = climbStairs(n); 
     cout << res << endl;
