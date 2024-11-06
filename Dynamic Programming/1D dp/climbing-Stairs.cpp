@@ -1,8 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/* recursion
+int climbStairs(int n){
+    //base case
+    if(n<=1) return 1;
+
+    return climbStairs(n-1) + climbStairs(n-2);
+}
+*/
+
 /* MEMOIZATION   time: O(n)  space: O(n) + O(n) */
-int climbStairsMemo(int n, vector<int> &dp) {
+int climbStairs(int n, vector<int> &dp) {
     // Base case: for n = 0 or n = 1, there is 1 way
     if (n <= 1) return 1;
 
@@ -12,13 +21,15 @@ int climbStairsMemo(int n, vector<int> &dp) {
     }
 
     // Calculate and store the result in dp array
-    dp[n] = climbStairsMemo(n - 1, dp) + climbStairsMemo(n - 2, dp);
+    dp[n] = climbStairs(n - 1, dp) + climbStairs(n - 2, dp);
 
     return dp[n];
 }
+*/
+
 
 /* TABULATION  time: O(n)  space: O(n) */
-int climbStairsTab(int n, vector<int> &ways) {
+int climbStairs(int n, vector<int> &ways) {
     // Base case initialization: 1 way for 0 or 1 steps
     ways[0] = 1;
     ways[1] = 1;
@@ -29,8 +40,9 @@ int climbStairsTab(int n, vector<int> &ways) {
 
     return ways[n];
 }
+*/
 
-/* SPACE OPTIMIZATION   time: O(n)  space: O(1) */
+// SPACE OPTIMIZATION   time: O(n)  space: O(1) 
 int climbStairs(int n) {
     // Base case: 1 way for 0 or 1 steps
     if (n <= 1) return 1;
@@ -53,9 +65,7 @@ int main() {
 
     vector<int> dp(n + 1, -1);
 
-    // int res = climbStairsMemo(n, dp); // Using memoization
-    // int res = climbStairsTab(n, dp);  // Using tabulation
-    int res = climbStairs(n); // Using space optimization
+    int res = climbStairs(n); 
 
     cout << res << endl;
 
