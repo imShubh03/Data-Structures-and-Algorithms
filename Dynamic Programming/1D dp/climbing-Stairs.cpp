@@ -56,7 +56,7 @@ int climbStairs(int n) {
         step2 = current; // Update step2 to current
     }
 
-    return step2; // Final result
+    return step1; // Final result
 }
 
 int main() {

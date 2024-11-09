@@ -14,7 +14,7 @@ int solve(vector<int>& heights, int ind) {
     return min(left, right);
 }
 int frogjumps(vector<int>& heights, int n) {
-    return solve(heights, n - 1, );
+    return solve(heights, n - 1 );
 }
 */
 
