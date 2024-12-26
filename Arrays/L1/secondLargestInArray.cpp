@@ -34,9 +34,7 @@ public:
                 maxEle=arr[i];
             }
             if(arr[i]<minEle){
-                if(arr[i]<minEle){
-                    minEle = arr[i];
-                }
+                minEle = arr[i];
             }
         }
 
