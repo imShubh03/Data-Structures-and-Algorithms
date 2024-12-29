@@ -1,23 +1,4 @@
 public class SortColors {
-    public static void main(String[] args) {
-        SortColors sortColors = new SortColors();
-
-        int[] nums = { 2, 0, 2, 1, 1, 0 };
-        System.out.println("Before sorting:");
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
-
-        sortColors.sortColors(nums);
-
-        System.out.println("After sorting:");
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
-    }
-
     public void sortColors(int[] nums) {
         int n = nums.length;
         int zeros = 0;
@@ -54,5 +35,23 @@ public class SortColors {
             nums[i++] = 2;
             twos--;
         }
+    }
+    public static void main(String[] args) {
+        SortColors sortColors = new SortColors();
+
+        int[] nums = { 2, 0, 2, 1, 1, 0 };
+        System.out.println("Before sorting:");
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        sortColors.sortColors(nums);
+
+        System.out.println("After sorting:");
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
     }
 }
