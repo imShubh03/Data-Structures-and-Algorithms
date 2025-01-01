@@ -22,6 +22,9 @@ public:
 };
 */
 
+//better hashing
+
+
 // oprtimal 2 pointers
 class Solution {
 public:
