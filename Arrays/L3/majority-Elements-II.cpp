@@ -44,6 +44,50 @@ public:
 };
 */
 
+//optimal
+class Solution {
+public:
+    vector<int> majorityElement(vector<int>& nums) {
+        int n = nums.size();
+        int el1 = INT_MIN, el2 = INT_MIN;  // Initialize with a value not present in the array
+        int cnt1 = 0, cnt2 = 0;
+
+        // First pass to find potential candidates
+        for (int i = 0; i < n; i++) {
+            if (cnt1 == 0 && nums[i] != el2) {
+                cnt1 = 1;
+                el1 = nums[i];
+            } else if (cnt2 == 0 && nums[i] != el1) {
+                cnt2 = 1;
+                el2 = nums[i];
+            } else if (el1 == nums[i]) {
+                cnt1++;
+            } else if (el2 == nums[i]) {
+                cnt2++;
+            } else {
+                cnt1--;
+                cnt2--;
+            }
+        }
+
+        // Verify the counts of el1 and el2
+        cnt1 = 0, cnt2 = 0;
+        vector<int> res;
+        for (int i = 0; i < n; i++) {
+            if (el1 == nums[i]) cnt1++;
+            if (el2 == nums[i]) cnt2++;
+        }
+
+        int threshold = n / 3;
+        if (cnt1 > threshold) res.push_back(el1);
+        if (cnt2 > threshold) res.push_back(el2);
+
+        sort(res.begin(), res.end()); // Optional: To return elements in sorted order
+
+        return res;
+    }
+};
+
 
 
 int main() {
