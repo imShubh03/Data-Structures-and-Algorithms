@@ -4,23 +4,25 @@ using namespace std;
 /* time:O(maxim in arr)*O(n) ~ O(n^2)  space:O(1)
 class Solution {
 public:
+    int sumbyD(vector<int>& nums, int d) {
+        int n = nums.size();
+        int sum = 0;
+
+        for(int i =0; i<n; i++) {
+            sum += (nums[i] + d - 1)/d;
+        }
+        return sum;
+    }
     int smallestDivisor(vector<int>& nums, int threshold) {
         int n = nums.size();
         int maxi = *max_element(nums.begin(), nums.end());
 
-        for (int d = 1; d <= maxi; d++) {
-            int sum = 0;
-
-            for (int i = 0; i < n; i++) {
-                sum += (nums[i] + d - 1) / d;  
-            }
-
-            if (sum <= threshold) {
+        for(int d = 1; d<=maxi; d++) {
+            if(sumbyD(nums, d) <= threshold) {
                 return d;
             }
         }
-
-        return -1;  
+        return -1;
     }
 };
 */

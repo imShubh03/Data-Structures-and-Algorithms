@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* time: O(m * logn) space: O(1)
+/* time: O(m * n) space: O(1)
 int find(int i, int n) {
     long long ans = 1;
     for(int j = 1; j <= n; j++) {
@@ -20,6 +20,41 @@ int Nthroot(int n, int m) {
         }
     }
     return -1;
+}
+*/
+
+
+/* fails coz larger testcases TC:O(n logm)
+int find(int i, int n){
+  long long ans = 1;
+
+  for(int j =1; j<=n; j++){
+    ans = ans * i;
+    if(ans > LLONG_MAX) return ans;
+  }
+
+  return ans;
+}
+int NthRoot(int n, int m) {
+  // Write your code here.
+  //max ans can be 1 -> m
+  int low = 1;
+  int high = m;
+
+  while(low <= high){
+    int mid = (low + high)/2;
+
+    if(find(mid, n) == m){
+      return mid;
+    }
+    else if(find(mid, n) < m){
+      low = mid +1;
+    }
+    else {
+      high = mid -1;
+    }
+  }
+  return -1;
 }
 */
 

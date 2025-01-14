@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
 class Solution {
 public:
 
@@ -34,7 +35,35 @@ public:
         return index;
     }
 };
+*/
 
+class Solution {
+public:
+
+    // REMEMBER: the no of times array is rotated = index of min elem in array :)
+    int findKRotation(vector<int> &nums) {
+        int n = nums.size();
+        int l = 0, h = n - 1;
+        int idx = -1;
+
+        while (l <= h) {
+            if (nums[l] <= nums[h]) {
+                idx = l; // Smallest element is at index 'l'
+                break;
+            }
+
+            int m = (l + h) / 2;
+
+            if (nums[l] <= nums[m]) {
+                l = m + 1; // The left half is sorted, move to the right half
+            } else {
+                h = m; // The pivot is in the left half, update 'h'
+            }
+        }
+
+        return idx;
+    }
+};
 
 int main() {
     Solution solution;

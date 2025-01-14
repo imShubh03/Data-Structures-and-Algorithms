@@ -2,6 +2,44 @@
 using namespace std;
 
 /*
+void solve(vector<int> &A, vector<vector<int>> &ans, vector<int> &ds, vector<int> &vis){
+    //base case
+    if(ds.size() == A.size()){
+        ans.push_back(ds);
+        return;
+    }
+
+    //iterate over the arr
+
+    for(int i =0; i<A.size(); i++){
+        if(!vis[i]){
+            ds.push_back(nums[i]);
+            vis[i] = 1;
+            solve(A, ans, ds, vis);
+            //back track
+            vis[i] = 0;
+            ds.pop_back();
+        }
+    }
+}
+vector<int> nextGreaterPermutation(vector<int> &A) {
+    int n = A.size();
+    vector<vector<int>>ans;
+    vector<int>ds;
+    vector<int>vis(n, 0);
+    solve(A, ans, ds, vis);
+    sort(ans.begin(), ans.end());
+
+    for(int i =0; i<ans.size(); i++){
+        if(ans[i] == A && i< ans.size() - 1){
+            return ans[i+1];
+        }
+    }
+    return ans[0];
+}
+*/
+
+/*
 void findPermutations(vector<int> &A, int l, int r, vector<vector<int>> &perms) {
     if(l == r) {
         perms.push_back(A);
