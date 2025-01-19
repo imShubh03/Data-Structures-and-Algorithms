@@ -33,6 +33,32 @@ public:
 };
 */
 
+/*  time: O(N) , space: O(N)
+class Solution {
+public:
+    string reverseString(string &str) {
+        int n = str.size();
+        stringstream ss(str);
+        string token = "";
+        string ans = "";
+
+        // Split the string into words and construct the reversed result
+        while (ss >> token) {
+            // If 'ans' is not empty, prepend 'token' with a space
+            if (!ans.empty()) {
+                ans = token + " " + ans;
+            } 
+            // Otherwise, directly assign 'token' to 'ans'
+            else {
+                ans = token;
+            }
+        }
+
+        return ans;
+    }
+};
+*/
+
 
 // time: O(N) and space: O(1)
 class Solution {

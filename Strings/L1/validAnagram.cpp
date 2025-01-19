@@ -14,7 +14,7 @@ class Solution{
 };
 */
 
-//time: O(n) , space:O(n)
+/* time: O(n) , space:O(n)
 class Solution{
     public:
     bool isAnagram(string s, string t){
@@ -42,8 +42,33 @@ class Solution{
         return true;
     }
 };
+*/
 
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        int m = s.size();
+        int n = t.size();
 
+        vector<int>freq(26);
+
+        for(char &ch : s){
+            freq[ch - 'a']++;
+        }
+
+        for(char &ch : t){
+            freq[ch - 'a']--;
+        }
+
+        for(int it : freq){
+            if(it != 0){
+                return false;
+            }
+        }
+
+        return true;
+    }
+};
 
 int main() {
     Solution sol;

@@ -1,6 +1,22 @@
 #include <bits/stdc++.h>
-
 using namespace std;
+
+/*TC: O(n^2) SC"O(1)
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        int m = s.length();
+        int n = goal.length();
+        if(m != n) return false;
+        for(int cnt =1; cnt <=m; cnt++){
+            rotate(s.begin(), s.begin()+1, s.end());
+            if( s == goal) return true;
+        }
+
+        return false;
+    }
+};
+*/
 
 /*   //return no of rotations
 int rotateString(string s, string goal)
