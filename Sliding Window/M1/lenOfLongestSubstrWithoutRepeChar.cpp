@@ -35,7 +35,7 @@ public:
 
         while (r < n) {
             if (hash[s[r]] != -1 && hash[s[r]] >= l) {
-                l = hash[s[r]] + 1; // Move the left pointer
+                l = hash[s[r]] + 1; // Move the left pointer to one place ahead of r
             }
 
             int len = r - l + 1;

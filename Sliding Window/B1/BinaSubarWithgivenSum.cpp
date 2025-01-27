@@ -50,6 +50,7 @@ public:
 
 public:
     int numSubarraysWithSum(vector<int>& nums, int goal) {
+        //inoder to find no of subarray w sum == goal ==> we do like subarr w sum (goal) - subarr w sum(goal - 1);
         int ans = findAns(nums, goal) - findAns(nums, goal - 1);
         return ans;
     }

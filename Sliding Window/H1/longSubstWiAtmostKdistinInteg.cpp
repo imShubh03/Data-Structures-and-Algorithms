@@ -6,10 +6,8 @@ int getLengthofLongestSubstring(int k, string s){
     // Write your code here.
     int n = s.length();
     int maxlen = 0;
-    map<char, int> mp;
     for (int i = 0; i < n; i++){
-        mp.clear();
-
+        map<char, int> mp;
         for (int j = i; j < n; j++){
             mp[s[j]]++;
 
@@ -27,8 +25,7 @@ int getLengthofLongestSubstring(int k, string s){
 // optimised:O(2n)
 int getLengthofLongestSubstring(int k, string s){
     int n = s.length();
-    if (n == 0 || k == 0)
-        return 0;
+    if (n == 0 || k == 0) return 0;
 
     int maxlen = 0;
     int left = 0;
