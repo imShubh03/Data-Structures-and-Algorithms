@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-/*
-MAX HEAP
+
+// MAX HEAP
 void heapify(int arr[], int n, int i)
 {
-    // for max heap larget elel is i
+    // for max heap largest ele is i
     int largest = i;
     // put largest eleme in correct posn
     int left = 2 * i;
@@ -23,20 +23,19 @@ void heapify(int arr[], int n, int i)
     if (largest != i)
     {
         swap(arr[largest], arr[i]);
-        // now check if any elem to be moved in correct posn by rec7ursive call
+        // now check if any elem to be moved in correct posn by recursive call
         heapify(arr, n, largest);
     }   
 }
 
-*/
 
 
 
+/*
 // MIN HEAP
-
 void heapify(int arr[], int n, int i)
 {
-    // for max heap larget elel is i
+    // for max heap largest ele is i
     int smallest = i;
     // put largest eleme in correct posn
 
@@ -62,7 +61,7 @@ void heapify(int arr[], int n, int i)
     }
     
 }
-
+*/
 
 
 
