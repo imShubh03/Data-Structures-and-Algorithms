@@ -82,7 +82,7 @@ int main(){
 
     h.deleteFromHeap();
     h.print();
-    // TC of deletoion O(logn)
+    // TC of deletion O(logn)
 
 
     return 0;
