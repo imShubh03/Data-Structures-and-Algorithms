@@ -44,6 +44,39 @@ public:
     }
 };
 
+
+/* METHOD 2
+
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef pair<int, int> P;
+
+static bool comparator(P &item1, P &item2) {
+    double r1 = (double)item1.second / (double)item1.first;
+    double r2 = (double)item2.second / (double)item2.first;
+    return r1 > r2;
+}
+
+double maximumValue(vector<P> &items, int n, int w) {
+    sort(items.begin(), items.end(), comparator);
+    double ans = 0.0;
+    
+    for (int i = 0; i < n; i++) {
+        if (items[i].first <= w) {
+            ans += (double)items[i].second;
+            w -= items[i].first;
+        } else {
+            ans += (double)items[i].second * ((double)w / (double)items[i].first);
+            break;
+        }
+    }
+    
+    return ans;
+}
+
+*/
+
 // Main function to test the implementation
 int main() {
     Solution sol;

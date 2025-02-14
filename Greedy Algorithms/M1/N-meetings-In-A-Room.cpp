@@ -7,7 +7,7 @@ struct meeting {
 
 class Solution {
 public:
-    // Static comparator to sort meetings by end time and then position
+    // Static comparator to sort meetings by end time coz itwill give me faster meetings greedily and then position
     static bool comparator(meeting m1, meeting m2) {
         if (m1.end < m2.end) return true; // Earlier end time comes first
         if (m1.end > m2.end) return false; // Later end time comes later

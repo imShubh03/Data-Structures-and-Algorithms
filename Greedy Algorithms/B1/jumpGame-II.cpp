@@ -1,6 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+class Solution {
+public:
+    int solve(vector<int>& nums, int ind, int jumps) {
+        int n = nums.size();
+        if (ind >= n - 1) return jumps; // If we reach the last index, return jumps count
+        
+        int minJumps = INT_MAX;
+        for (int i = 1; i <= nums[ind]; i++) { // Try all possible jumps
+            minJumps = min(minJumps, solve(nums, ind + i, jumps + 1));
+        }
+
+        return minJumps;
+    }
+
+    int jump(vector<int>& nums) {
+        return solve(nums, 0, 0);
+    }
+};
+
+*/
+
 class Solution {
 public:
     int jump(vector<int>& nums) {

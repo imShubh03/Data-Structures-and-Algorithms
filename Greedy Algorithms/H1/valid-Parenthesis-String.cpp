@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 
+//TC:O(3^n) SC:O(n) len of tree
 class Solution {
 public:
     bool isValid(string s, int ind, int cnt) {
@@ -28,7 +29,43 @@ public:
     }
 };
 
-// Main function to test the implementation
+
+//BETTER CAN APPLY DP 
+
+
+//OPTIMAL
+
+class Solution {
+    public:
+    bool checkValidString(string s) {
+        int n = s.size();
+        int mini = 0;
+        int maxi = 0;
+        for(int i =0; i<n; i++){
+
+            if(s[i] == '('){
+                maxi++;
+                mini++;
+            }
+            else if(s[i] == ')'){
+                maxi--;
+                mini--;
+            }
+            else {
+                mini = mini-1;
+                maxi = maxi+1;
+            }
+
+            if(mini < 0) mini = 0;
+
+            if(maxi < 0) return false;
+        }
+
+        return mini==0;
+    }
+};
+    
+
 int main() {
     Solution sol;
 
