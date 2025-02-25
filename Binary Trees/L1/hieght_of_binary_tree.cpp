@@ -15,6 +15,7 @@ public:
     }
 };
 
+//DFS solution  TC:O(n) SC:O(n)(skew tree)
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
@@ -25,12 +26,40 @@ public:
         int leftSide = maxDepth(root -> left);
         int rightSide = maxDepth(root -> right);
 
-        int ans= max(leftSide,rightSide) + 1;
+        int ans= max(leftSide,rightSide) + 1;  //1 for curr node and then add with max from left and right
 
         return ans;
         
     }
 };
+
+/*  BFS solution
+class Solution {
+    public:
+    int maxDepth(TreeNode* root) {
+        // Fix: Handle empty tree case
+        if (root == nullptr) return 0;
+
+        int depth = 0;
+        queue<TreeNode*> q;
+        q.push(root);
+
+        while (!q.empty()) {
+            int size = q.size();
+            depth++;
+            for (int i = 0; i < size; i++) {
+                TreeNode* node = q.front();
+                q.pop();
+
+                if (node->left) q.push(node->left);
+                if (node->right) q.push(node->right);
+            }
+        }
+
+        return depth;
+    }
+};
+*/
 
 int main() {
     // Example usage

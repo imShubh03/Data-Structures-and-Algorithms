@@ -5,13 +5,11 @@ using namespace std;
 double calculateAngle(int hour, int minute) {
     // Ensure hour is within 1-12 range
     if (hour < 1 || hour > 12) {
-        cout << "Invalid hour input. Hour must be between 1 and 12." << endl;
         return -1;
     }
 
     // Ensure minute is within 0-59 range
     if (minute < 0 || minute > 59) {
-        cout << "Invalid minute input. Minute must be between 0 and 59." << endl;
         return -1;
     }
 

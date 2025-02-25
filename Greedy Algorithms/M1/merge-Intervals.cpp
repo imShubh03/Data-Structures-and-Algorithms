@@ -15,11 +15,14 @@ public:
             int end = intervals[i][1];
 
             // Skip already merged intervals
+            //ans = [1. 6]     - [4, 5]   6 > 5 skip
             if (!ans.empty() && end <= ans.back()[1]) {
                 continue;
             }
 
             // Merge overlapping intervals
+            [1, 3] [2, 6]     
+            end = 3
             for (int j = i + 1; j < n; j++) {
                 if (intervals[j][0] <= end) {
                     end = max(end, intervals[j][1]);
