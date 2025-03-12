@@ -39,6 +39,8 @@ class Solution{
 
         diameterOfBinaryTree(root -> left);
         diameterOfBinaryTree(root -> right);
+
+        return maxi;
     }
 };
 */

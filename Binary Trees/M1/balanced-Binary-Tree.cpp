@@ -14,7 +14,7 @@ class Node{
 };
 
 
-/* TC:O(n * n) 
+/* TC:O(n * n) SC:O(n)
 class Solution {
     public:
     int height(TreeNode* root){
@@ -31,7 +31,7 @@ class Solution {
             return true;
         }
 
-        //check the left hieght and right hieght
+        //check the left height and right height
         int lh = height(root -> left);
         int rh = height(root -> right);
 
@@ -62,7 +62,7 @@ class Solution {
         if(rightH == -1) return -1;  
 
         if(abs(leftH - rightH) > 1) return -1;  
-
+        
         return max(leftH, rightH) + 1;
     }
 
