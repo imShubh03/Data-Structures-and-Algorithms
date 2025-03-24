@@ -43,7 +43,7 @@ class Solution{
 };
 
 /*
-//recursive code
+//iterative code
 class Solution {
     public:
     vector<int> inorderTraversal(TreeNode* root) {

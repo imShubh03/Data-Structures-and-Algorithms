@@ -23,7 +23,7 @@ public:
         bool leftToRight = true;
 
         while (!q.empty()) {
-            int size = q.size(); // Fix 1: Use q.size() instead of q.front()
+            int size = q.size(); 
             vector<int> row(size);
 
             for (int i = 0; i < size; i++) {
@@ -34,7 +34,7 @@ public:
                 if (leftToRight) {
                     index = i;
                 } else {
-                    index = size - i - 1; // Fix 2: Use 'size' instead of undefined 'n'
+                    index = size - i - 1; 
                 }
 
                 row[index] = front->val;

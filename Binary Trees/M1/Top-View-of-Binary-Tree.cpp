@@ -20,23 +20,23 @@ public:
         if (root == nullptr)
             return ans;
 
-        map<int, int> mp;  // Stores first node at each horizontal distance
+        map<int, int> mp; 
         queue<pair<Node*, int>> q;
         q.push({root, 0});
 
         while (!q.empty()) {
-            auto it = q.front();  // Corrected auto declaration
+            auto it = q.front();  
             q.pop();
             Node* node = it.first;
             int line = it.second;
 
-            if (!mp.count(line))  // Store only first node at horizontal distance
+            if (!mp.count(line))  
                 mp[line] = node->data;
 
-            if (node->left)  // Fixed condition
+            if (node->left)  
                 q.push({node->left, line - 1});
 
-            if (node->right)  // Fixed condition
+            if (node->right)  
                 q.push({node->right, line + 1});
         }
 
